@@ -6,6 +6,10 @@ const config: Config.InitialOptions = {
     preset: "ts-jest",
     testEnvironment: "node",
     testMatch: ["**/test/**/*.spec.ts"],
+    transform: {
+        "^.+\\.vue$": "@vue/vue3-jest",
+        "^.+\\.ts$": "ts-jest",
+    },
     moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
         // This has to match the baseUrl defined in tsconfig.json.
         prefix: "<rootDir>/",
