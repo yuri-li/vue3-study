@@ -16,8 +16,7 @@
     "paths": {
       "@/*": ["src/*"],
       "~/*": ["test/*"]
-    },
-    "types": ["element-plus/global"]
+    }
   },
   "include": [
     "src/**/*.ts","src/**/*.d.ts","src/**/*.vue",

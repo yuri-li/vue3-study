@@ -1,10 +1,10 @@
 import type { Config } from "@jest/types"
-import { pathsToModuleNameMapper } from "ts-jest/utils"
+import { pathsToModuleNameMapper } from "ts-jest"
 import { compilerOptions } from "./tsconfig.json"
 
 const config: Config.InitialOptions = {
     preset: "ts-jest",
-    testEnvironment: "node",
+    testEnvironment: "jsdom",
     testMatch: ["**/test/**/*.spec.ts"],
     transform: {
         "^.+\\.vue$": "@vue/vue3-jest",
