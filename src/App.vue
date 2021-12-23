@@ -1,16 +1,18 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 // import HelloWorld from "@/components/HelloWorld.vue"
 // import TabIndex from "@/components/tabs/TabIndex.vue"
-import Addition from "@/components/addition/Additon.vue"
+// import Addition from "@/components/addition/Additon.vue"
+// import MyDialog from "@/components/MyDialog.vue"
+import BasicKnowledgeVue from "@/components/BasicKnowledge.vue"
 </script>
 
 <template>
-  <img alt="Vue logo" src="@/assets/logo.png" />
-  <!-- <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" /> -->
+  <!-- <img alt="Vue logo" src="@/assets/logo.png" /> -->
+  <!-- <HelloWorld /> -->
   <!-- <TabIndex /> -->
-  <Addition />
+  <!-- <Addition /> -->
+  <BasicKnowledgeVue />
+ <MyDialog />
 </template>
 
 <style>

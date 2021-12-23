@@ -30,6 +30,7 @@
         "withDefaults": "readonly"
     },
     "rules": {
+        "vue/no-v-html": "off",
         "vue/first-attribute-linebreak": "off",
         "vue/html-quotes": ["error", "double"],
         "vue/html-indent": "off",
