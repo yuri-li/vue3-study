@@ -3,7 +3,8 @@
 // import TabIndex from "@/components/tabs/TabIndex.vue"
 // import Addition from "@/components/addition/Additon.vue"
 // import MyDialog from "@/components/MyDialog.vue"
-import BasicKnowledgeVue from "@/components/BasicKnowledge.vue"
+// import BasicKnowledgeVue from "@/components/BasicKnowledge.vue"
+import MyForm from "@/components/form/MyForm.vue"
 </script>
 
 <template>
@@ -11,8 +12,9 @@ import BasicKnowledgeVue from "@/components/BasicKnowledge.vue"
   <!-- <HelloWorld /> -->
   <!-- <TabIndex /> -->
   <!-- <Addition /> -->
-  <BasicKnowledgeVue />
- <MyDialog />
+   <!-- <MyDialog /> -->
+  <!-- <BasicKnowledgeVue /> -->
+  <MyForm />
 </template>
 
 <style>
