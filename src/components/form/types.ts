@@ -1,12 +1,12 @@
 interface ActivityForm {
-    activityName: string,
-    region: ActivityZone | "",
-    date1: string,
-    date2: string,
-    delivery: boolean,
-    activityType: ActivityType[] | "",
-    resource: ResourceType | "",
-    desc: string,
+    activityName?: string,
+    region?: ActivityZone,
+    date1?: string,
+    date2?: string,
+    delivery?: boolean,
+    activityType: ActivityType[],
+    resource?: ResourceType,
+    desc?: string,
 }
 enum ActivityZone {
     shanghai = "上海",
@@ -39,7 +39,7 @@ const activityRules = {
     region: [
       {
         required: true,
-        message: "Please select Activity zone",
+        message: "请选择活动地点",
         trigger: "change",
       },
     ],

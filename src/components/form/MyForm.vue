@@ -26,7 +26,7 @@
     </el-form-item>
     <el-form-item label="活动类型" prop="activityType">
       <el-checkbox-group v-model="ruleForm.activityType">
-      <el-checkbox v-for="typeItem in Object.keys(ActivityType)" :key="typeItem" :label="typeItem" name="activityType">{{ ActivityType[typeItem as keyof typeof ActivityType] }}</el-checkbox>
+      <el-checkbox v-for="typeItem in Object.keys(ActivityType)" :key="typeItem" :label="typeItem">{{ ActivityType[typeItem as keyof typeof ActivityType] }}</el-checkbox>
       </el-checkbox-group>
     </el-form-item>
     <el-form-item label="赞助资源" prop="resource">
@@ -48,14 +48,7 @@ import { reactive, ref } from "vue"
 import { ActivityForm, ActivityZone, ActivityType, ResourceType, activityRules } from "@/components/form/types"
 const ruleFormRef = ref()
 const ruleForm: ActivityForm = reactive({
-  activityName: "",
-  region: "",
-  date1: "",
-  date2: "",
-  delivery: false,
   activityType: [],
-  resource: "",
-  desc: "",
 })
 function submitForm() {
   ruleFormRef.value.validate((valid: boolean) => {
