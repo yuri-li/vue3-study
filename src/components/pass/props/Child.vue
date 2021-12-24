@@ -5,9 +5,15 @@
     <button @click="() => $emit('updateAge', 20)">点击按钮，修改age</button>
 </template>
 <script lang="ts" setup>
-import { Member } from "@/components/pass/props/types"
+import { Member, ChildExpose } from "@/components/pass/props/types"
 defineProps<{ dto: Member }>()
 defineEmits<{
     (e: "updateAge", age: number): void
 }>()
+const address = "北京"
+defineExpose<ChildExpose>({
+    address,
+    username: "yuri",
+    sayHello: () => alert("hello")
+})
 </script>

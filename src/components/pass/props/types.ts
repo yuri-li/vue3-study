@@ -4,4 +4,10 @@ interface Member {
     gender: boolean,
 }
 
-export {Member}
+interface ChildExpose {
+    address?: string,
+    username: string,
+    sayHello: () => void
+}
+
+export { Member, ChildExpose }
