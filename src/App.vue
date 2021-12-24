@@ -5,7 +5,7 @@
 // import MyDialog from "@/components/MyDialog.vue"
 // import BasicKnowledgeVue from "@/components/BasicKnowledge.vue"
 // import MyForm from "@/components/form/MyForm.vue"
-import Parent from "@/components/pass/props/Parent.vue"
+// import Parent from "@/components/pass/props/Parent.vue"
 </script>
 
 <template>
@@ -13,10 +13,18 @@ import Parent from "@/components/pass/props/Parent.vue"
   <!-- <HelloWorld /> -->
   <!-- <TabIndex /> -->
   <!-- <Addition /> -->
-   <!-- <MyDialog /> -->
+  <!-- <MyDialog /> -->
   <!-- <BasicKnowledgeVue /> -->
   <!-- <MyForm /> -->
-  <Parent />
+  <!-- <Parent /> -->
+  <div>
+    <router-link to="/hello">HelloWorld</router-link> |
+    <router-link to="/add">Addition</router-link> |
+    <router-link to="/form">MyForm</router-link> |
+    <div>
+      <router-view />
+    </div>
+  </div>
 </template>
 
 <style>
