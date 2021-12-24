@@ -4,7 +4,8 @@
 // import Addition from "@/components/addition/Additon.vue"
 // import MyDialog from "@/components/MyDialog.vue"
 // import BasicKnowledgeVue from "@/components/BasicKnowledge.vue"
-import MyForm from "@/components/form/MyForm.vue"
+// import MyForm from "@/components/form/MyForm.vue"
+import Parent from "@/components/pass/props/Parent.vue"
 </script>
 
 <template>
@@ -14,7 +15,8 @@ import MyForm from "@/components/form/MyForm.vue"
   <!-- <Addition /> -->
    <!-- <MyDialog /> -->
   <!-- <BasicKnowledgeVue /> -->
-  <MyForm />
+  <!-- <MyForm /> -->
+  <Parent />
 </template>
 
 <style>
