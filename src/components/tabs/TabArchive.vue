@@ -1,1 +1,0 @@
-<template>Archive component</template>

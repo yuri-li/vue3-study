@@ -1,1 +1,0 @@
-<template>Home component</template>
