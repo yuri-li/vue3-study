@@ -5,22 +5,13 @@
 // import MyDialog from "@/components/MyDialog.vue"
 // import BasicKnowledgeVue from "@/components/BasicKnowledge.vue"
 // import MyForm from "@/components/form/MyForm.vue"
-// import Parent from "@/components/pass/props/Parent.vue"
+// import Layout from "@/components/layout/5.vue"
 </script>
 
 <template>
-  <!-- <img alt="Vue logo" src="@/assets/logo.png" /> -->
-  <!-- <HelloWorld /> -->
-  <!-- <TabIndex /> -->
-  <!-- <Addition /> -->
-  <!-- <MyDialog /> -->
-  <!-- <BasicKnowledgeVue /> -->
-  <!-- <MyForm /> -->
-  <!-- <Parent /> -->
   <div>
-    <router-link to="/hello">HelloWorld</router-link> |
-    <router-link to="/add">Addition</router-link> |
-    <router-link to="/form">MyForm</router-link> |
+    <router-link to="/hello1">Hello1</router-link>|
+    <router-link to="/hello2">Hello2</router-link>|
     <div>
       <router-view />
     </div>

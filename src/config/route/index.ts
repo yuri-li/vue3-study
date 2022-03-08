@@ -4,14 +4,14 @@ const routes = [
     {
         path: "/",
         redirect: {
-            name: "Addition",
+            name: "Layout",
         },
     },
     {
         path: "/hello",
         name: "HelloWorld",
         component: () => import("@/components/HelloWorld.vue"),
-        props: () => ({ msg: "Hello Vue 3 + TypeScript + Vite" })
+        props: () => ({ msg: "Hello World" })
     },
     {
         path: "/add",
@@ -22,6 +22,31 @@ const routes = [
         path: "/form",
         name: "MyForm",
         component: () => import("@/components/form/MyForm.vue"),
+    },
+    {
+        path: "/todo",
+        name: "TodoList",
+        component: () => import("@/components/todo/TodoIndex.vue"),
+    },
+    {
+        path: "/toggle",
+        name: "ToggleImg",
+        component: () => import("@/components/ToggleImg.vue"),
+    },
+    {
+        path: "/layout",
+        name: "Layout",
+        component: () => import("@/components/layout/Layout.vue"),
+    },
+    {
+        path: "/hello1",
+        name: "hello1",
+        component: () => import("@/components/state/Hello1.vue"),
+    },
+    {
+        path: "/hello2",
+        name: "hello2",
+        component: () => import("@/components/state/Hello2.vue"),
     },
 ]
 const router = createRouter({

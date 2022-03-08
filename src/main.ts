@@ -6,4 +6,5 @@ import router from "@/config/route"
 
 createApp(App)
     .use(router)
-    .use(ElementPlus).mount("#app")
+    .use(ElementPlus)
+    .mount("#app")
