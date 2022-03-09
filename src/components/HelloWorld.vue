@@ -1,6 +1,8 @@
 <template>
     <span class="title">hello world</span>
-    <button @click="count += 1">点击</button>
+    <div id="div-btn">
+        <button @click="count += 1">点击</button>
+    </div>
     <span>点击次数:{{ count }}</span>
 </template>
 <script lang="ts" setup>

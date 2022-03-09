@@ -1,9 +1,22 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.addMissingImports": true
   },
   "eslint.validate": [
     "typescript",
     "vue"
-  ]
+  ],
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/node_modules": true
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.yarn": true,
+    "**/yarn.lock": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true
+  },
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }

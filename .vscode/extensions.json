@@ -1,3 +1,8 @@
 {
-  "recommendations": ["johnsoncodehk.volar"]
+  "recommendations": [
+    "johnsoncodehk.volar",
+    "arcanis.vscode-zipfs",
+    "dbaeumer.vscode-eslint",
+    "npxms.hide-gitignored"
+  ]
 }
