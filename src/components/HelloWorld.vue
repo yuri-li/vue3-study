@@ -1,5 +1,5 @@
 <template>
-    <span class="title">hello world</span>
+    <span class="title">{{ msg }}</span>
     <div id="div-btn">
         <button @click="count += 1">点击</button>
     </div>
@@ -7,6 +7,10 @@
 </template>
 <script lang="ts" setup>
 import { ref } from "vue"
+
+withDefaults(defineProps<{ msg: string }>(), {
+    msg: "hello world"
+})
 
 const count = ref(0)
 </script>
