@@ -1,28 +1,35 @@
 <template>
     <div class="tab">
         <div class="tab-title">
-            <button v-for="element in TabName.values()" :key="element.name" :class="{ selected: selectedComponent == element }" @click="selectedComponent = element">{{ element.name }}</button>
+            <button v-for="element in TabName.values()" :key="element.name" :class="['tab-button', { active: selectedTab.name == element.name }]" @click="selectedTab = element">{{ element.name }}</button>
         </div>
         <div class="tab-content">
-            <Home v-if="selectedComponent == TabName.Home" />
-            <Posts v-else-if="selectedComponent == TabName.Posts" />
-            <Archive v-else />
+            <component :is="selectedTab.component()" />
         </div>
     </div>
 </template>
 <script setup lang="ts">
-import Home from "@/components/tabs/Home.vue"
-import Posts from "@/components/tabs/Posts.vue"
-import Archive from "@/components/tabs/Archive.vue"
-import { ref } from "vue"
+import { ref, } from "vue"
 import { TabName } from "@/components/tabs/model"
 
-const selectedComponent = ref(TabName.Home)
-
+const selectedTab = ref(TabName.Home)
 </script>
 <style lang="scss" scoped>
-.selected {
-    background-color: brown;
+.tab-button {
+    padding: 6px 10px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background: #f0f0f0;
+    margin-bottom: -1px;
+    margin-right: -1px;
+    &:hover {
+        background: #86ae85;
+    }
+    &.active {
+        background: #986161;
+    }
 }
 .tab {
     display: flex;
@@ -35,7 +42,6 @@ const selectedComponent = ref(TabName.Home)
     }
     .tab-content {
         width: 100%;
-        background-color: darkkhaki;
     }
 }
 </style>

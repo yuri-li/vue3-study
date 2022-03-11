@@ -1,11 +1,18 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import Home from "@/components/tabs/Home.vue"
+import Posts from "@/components/tabs/Posts.vue"
+import Archive from "@/components/tabs/Archive.vue"
+
 class TabName {
-    public static readonly Home = new TabName("Home")
-    public static readonly Posts = new TabName("Posts")
-    public static readonly Archive = new TabName("Archive")
+    public static readonly Home = new TabName("Home", () => Home)
+    public static readonly Posts = new TabName("Posts", () => Posts)
+    public static readonly Archive = new TabName("Archive", () => Archive)
 
     name: string
-    private constructor(_name: string) {
+    component: () => any
+    private constructor(_name: string,_component: ()=>any) {
         this.name = _name
+        this.component = _component
     }
     static values() {
         return [TabName.Home, TabName.Posts, TabName.Archive]
