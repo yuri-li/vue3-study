@@ -35,21 +35,22 @@ const result = computed(() => {
 .content {
     display: flex;
     width: 500px;
-    height: 400px;
+    height: 230px;
     justify-content: space-between;
     align-items: center;
     .left {
         display: flex;
         width: 300px;
-        height: 300px;
+        height: 230px;
         align-content: space-between;
+        flex-wrap: wrap;
         .item {
             display: flex;
             width: 300px;
             height: 100px;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
+            
         }
     }
     .right {

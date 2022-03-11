@@ -1,5 +1,5 @@
 <template>
-    <input v-model="value" :readonly="readonly" />
+    <input v-model="value" :readonly="readonly" :class="{ readonly: readonly }" />
 </template>
 <script lang="ts" setup>
 
@@ -15,11 +15,13 @@ withDefaults(defineProps<{
 input {
     width: 100px;
     height: 100px;
-    border: none;
     border-radius: 15px;
-    background-color: rgb(96, 145, 91);
-    color: orange;
     font-size: 24px;
     text-align: center;
+    &.readonly {
+        border: none;
+        background-color: rgb(186, 120, 199);
+        color: orange;
+    }
 }
 </style>
