@@ -1,17 +1,17 @@
 <template>
     <div class="content">
         <div class="left">
-            <div class="first">
-                <Cell :readonly="false" :value="data.x" />
-                <Cell :readonly="true" :value="data.y" />
+            <div class="item">
+                <Cell v-model="data.x" :readonly="false" :value="Number(data.x)" />
+                <Cell :readonly="true" :value="result.x" />
             </div>
-            <div class="second">
-                <Cell :readonly="false" :value="result.x.valueOf()" />
-                <Cell :readonly="true" :value="result.y.valueOf()" />
+            <div class="item">
+                <Cell v-model="data.y" :readonly="false" :value="Number(data.y)" />
+                <Cell :readonly="true" :value="result.y" />
             </div>
         </div>
         <div class="right">
-            <Cell :readonly="true" :value="result.total.valueOf()" />
+            <Cell :readonly="true" :value="result.total" />
         </div>
     </div>
 </template>
@@ -31,3 +31,31 @@ const result = computed(() => {
     }
 })
 </script>
+<style lang="scss" scoped>
+.content {
+    display: flex;
+    width: 500px;
+    height: 400px;
+    justify-content: space-between;
+    align-items: center;
+    .left {
+        display: flex;
+        width: 300px;
+        height: 300px;
+        align-content: space-between;
+        .item {
+            display: flex;
+            width: 300px;
+            height: 100px;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    }
+    .right {
+        display: flex;
+        width: 100px;
+        height: 100px;
+    }
+}
+</style>

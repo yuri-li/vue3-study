@@ -1,5 +1,5 @@
 <template>
-    <input :readonly="readonly" :value="value" />
+    <input v-model="value" :readonly="readonly" />
 </template>
 <script lang="ts" setup>
 
