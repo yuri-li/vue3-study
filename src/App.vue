@@ -1,8 +1,9 @@
 <template>
-  <HelloWorld />
+  <SwitchTabs />
 </template>
 <script setup lang="ts">
-import HelloWorld from "@/components/HelloWorld.vue"
+// import HelloWorld from "@/components/HelloWorld.vue"
+import SwitchTabs from "@/components/tabs/Index.vue"
 </script>
 <style lang="scss">
 #app {
