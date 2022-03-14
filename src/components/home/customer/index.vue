@@ -14,12 +14,12 @@
                     <div class="card">
                         <span class="ml-3 w-35 text-gray-600 inline-flex items-center">监护人姓名</span>
                         <el-input
-                            v-model="username"
+                            v-model="parentname"
                             type="text"
                             maxlength="30"
                             class="w-50"
                             show-word-limit
-                            :clearable="deleteInput"
+                            clearable
                             placeholder="请输入客户姓名"
                         />
 
@@ -30,31 +30,25 @@
                             maxlength="11"
                             class="w-50"
                             show-word-limit
-                            placeholder="请输入客户姓名"
+                            placeholder="请输入手机号"
                         />
                     </div>
                 </el-card>
             </el-col>
         </el-row>
 
-        <el-table
-            :data="tableData"
-            height="500"
-            style="width: 100%"
-            align="center"
-            :row-class-name="tableRowClassName"
-        >
+        <el-table :data="tableData" height="500" style="width: 100%" align="center">
             <el-table-column type="index" width="50" />
-            <el-table-column prop="name" label="监护人姓名" width="100" align="center" />
-            <el-table-column prop="idcard" label="身份证号" width="180" align="center" />
-            <el-table-column prop="username" label="监护人身份" width="100" align="center" />
-            <el-table-column prop="phone" label="联系电话" width="180" align="center" />
+            <el-table-column prop="name" label="监护人姓名" width="100" />
+            <el-table-column prop="idcard" label="身份证号" width="180" />
+            <el-table-column prop="username" label="监护人身份" width="100" />
+            <el-table-column prop="phone" label="联系电话" width="180" />
             <el-table-column prop="add" label="联系地址" width="180" />
             <el-table-column prop="vip" label="是否会员" width="100" />
             <el-table-column prop="time" label="创建时间" width="180" />
             <el-table-column label="操作" width="200px">
                 <template #default="scope">
-                    <el-button @click="change(scope.row.vip)">修改</el-button>
+                    <el-button>修改</el-button>
                 </template>
             </el-table-column>
         </el-table>
@@ -63,188 +57,9 @@
 
 <script lang="ts" setup>
 import { ref } from "vue"
-const deleteInput = ref(true)
-const username = ref()
+import {tableData} from "@/components/home/customer/model"
+const parentname = ref()
 const phone = ref()
-
-const tableData = [
-    {
-        date: "2016-05-03",
-        name: "Tom",
-        address: "No. 189, Grove St, Los Angeles",
-        username: "妈妈",
-        phone: "18013786500",
-        vip: "会员",
-    },
-    {
-        date: "2016-05-03",
-        name: "Tom",
-        address: "No. 189, Grove St, Los Angeles",
-        username: "妈妈",
-        phone: "18013786500",
-        vip: "会员",
-    },
-    {
-        date: "2016-05-03",
-        name: "Tom",
-        address: "No. 189, Grove St, Los Angeles",
-        username: "妈妈",
-        phone: "18013786500",
-        vip: "会员",
-    },
-    {
-        date: "2016-05-03",
-        name: "Tom",
-        address: "No. 189, Grove St, Los Angeles",
-        username: "妈妈",
-        phone: "18013786500",
-        vip: "会员",
-    },
-    {
-        date: "2016-05-03",
-        name: "Tom",
-        address: "No. 189, Grove St, Los Angeles",
-        username: "妈妈",
-        phone: "18013786500",
-        vip: "会员",
-    },
-    {
-        date: "2016-05-03",
-        name: "Tom",
-        address: "No. 189, Grove St, Los Angeles",
-        username: "妈妈",
-        phone: "18013786500",
-        vip: "会员",
-    },
-    {
-        date: "2016-05-03",
-        name: "Tom",
-        address: "No. 189, Grove St, Los Angeles",
-        username: "妈妈",
-        phone: "18013786500",
-        vip: "会员",
-    },
-    {
-        date: "2016-05-03",
-        name: "Tom",
-        address: "No. 189, Grove St, Los Angeles",
-        username: "妈妈",
-        phone: "18013786500",
-        vip: "会员",
-    },
-    {
-        date: "2016-05-03",
-        name: "Tom",
-        address: "No. 189, Grove St, Los Angeles",
-        username: "妈妈",
-        phone: "18013786500",
-        vip: "会员",
-    },
-    {
-        date: "2016-05-03",
-        name: "Tom",
-        address: "No. 189, Grove St, Los Angeles",
-        username: "妈妈",
-        phone: "18013786500",
-        vip: "会员",
-    },
-    {
-        date: "2016-05-03",
-        name: "Tom",
-        address: "No. 189, Grove St, Los Angeles",
-        username: "妈妈",
-        phone: "18013786500",
-        vip: "会员",
-    },
-    {
-        date: "2016-05-02",
-        name: "Tom",
-        address: "No. 189, Grove St, Los Angeles",
-        username: "妈妈",
-        phone: "18013786500",
-        vip: "非会员",
-
-    },
-    {
-        date: "2016-05-04",
-        name: "Tom",
-        address: "No. 189, Grove St, Los Angeles",
-        username: "妈妈",
-        phone: "18013786500",
-        vip: "非会员",
-
-    },
-    {
-        date: "2016-05-01",
-        name: "Tom",
-        address: "No. 189, Grove St, Los Angeles",
-        username: "妈妈",
-        phone: "18013786500",
-        vip: "会员",
-
-    },
-    {
-        date: "2016-05-08",
-        name: "Tom",
-        address: "No. 189, Grove St, Los Angeles",
-        username: "妈妈",
-        phone: "18013786500",
-        vip: "非会员",
-
-    },
-    {
-        date: "2016-05-06",
-        name: "Tom",
-        address: "No. 189, Grove St, Los Angeles",
-        username: "妈妈",
-        phone: "18013786500",
-        vip: "非会员",
-
-    },
-    {
-        date: "2016-05-07",
-        name: "Tom",
-        address: "No. 189, Grove St, Los Angeles",
-        username: "妈妈",
-        phone: "18013786500",
-        vip: "会员",
-
-    },
-
-]
-
-interface User {
-    date: string
-    name: string
-    address: string
-    username: string
-    phone: string
-    vip: string
-}
-
-const tableRowClassName = ({
-    row,
-}: {
-    row: User
-    rowIndex: number
-}) => {
-    if (row.vip === "会员") {
-        return "success-row"
-    } 
-    return ""
-}
-
-console.log(tableRowClassName)
-
-
-
-function change(i) {
-    console.log(i)
-
-}
-
-
-
 
 </script>
 
@@ -263,10 +78,6 @@ function change(i) {
             width: 250px;
         }
     }
-}
-
-.warning-row {
-  background-color: red;
 }
 </style>
 

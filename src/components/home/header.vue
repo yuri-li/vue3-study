@@ -18,21 +18,9 @@
     </div>
 </template>
 
-<script lang="ts">
-import {ref} from "vue"
-
-const extend=ref(false)
-
- function bian(){
-    const boo=extend.value=!extend.value
-    return boo
-}
-
-export {extend,}
-</script>
 
 <script lang="ts" setup>
-
+import {extend,bian,}from "@/components/home/model"
 import { useRoute } from "vue-router"
 
 const route = useRoute()

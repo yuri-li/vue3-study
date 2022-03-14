@@ -5,7 +5,7 @@
                 <h1>邦思教育订单管理</h1>
             </div>
             <div class="content-main">
-                <el-form :ref="formDom" :model="form" :rules="rules" class="login-form">
+                <el-form ref="formDom" :model="form" :rules="rules" class="login-form">
                     <el-form-item class="radio">
                         <el-radio-group v-model="form.role">
                             <el-radio label="admin">管理员</el-radio>
@@ -14,7 +14,15 @@
                     </el-form-item>
 
                     <el-form-item class="phone" prop="phone">
-                        <el-input v-model="form.phone" type="text" size="large" clearable autocomplete="off" placeholder="请输入手机号" class="login-input">
+                        <el-input
+                            v-model="form.phone"
+                            type="text"
+                            size="large"
+                            clearable
+                            autocomplete="off"
+                            placeholder="请输入手机号"
+                            class="login-input"
+                        >
                             <template #prepend>
                                 <el-icon :size="32">
                                     <phone />
@@ -24,7 +32,13 @@
                     </el-form-item>
 
                     <el-form-item class="pwd" prop="pwd">
-                        <el-input v-model="form.pwd" :type="isShowPassword ? 'text' : 'password'" size="large" placeholder="请输入密码" autocomplete="off">
+                        <el-input
+                            v-model="form.pwd"
+                            :type="isShowPassword ? 'text' : 'password'"
+                            size="large"
+                            placeholder="请输入密码"
+                            autocomplete="off"
+                        >
                             <template #prepend>
                                 <el-icon :size="32">
                                     <lock />
@@ -39,7 +53,7 @@
                     </el-form-item>
 
                     <el-form-item class="btn" size="large">
-                        <el-button type="primary" @click="go">登录</el-button>
+                        <el-button type="primary" @click="submit(formDom)">登录</el-button>
                     </el-form-item>
                 </el-form>
             </div>
@@ -49,18 +63,33 @@
 
 <script lang="ts" setup>
 import { ref, reactive, } from "vue"
-import { useRouter } from "vue-router"
+import { useRouter} from "vue-router"
+
 import { rules, Form } from "@/views/login/model"
 
 const formDom = ref()
+
 const form = reactive(new Form())
 const isShowPassword = ref(false)
 
 const router = useRouter()
 //路由跳转
-function go() {
-    router.replace("home")
+const submit = async (e) => {
+    if (!e) return
+
+    await e.validate((valid:boolean, fields:string) => {
+        if (valid) {
+            console.log("提交成功")
+            router.replace("/home")
+
+        } else {
+            console.log("登陆失败", fields)
+        }
+    })
+
 }
+
+
 </script>
 <style lang="scss" scoped>
 $width: 100%;

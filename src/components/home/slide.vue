@@ -31,7 +31,7 @@
 
 <script lang="ts" setup>
 import { useRouter } from "vue-router"
-import { extend } from "./header.vue"
+import { extend } from "@/components/home/model"
 console.log(extend.value)
 
 const route = useRouter()
