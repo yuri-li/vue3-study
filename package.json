@@ -10,11 +10,10 @@
     "lint:script": "eslint --ext .ts,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
-    "@element-plus/icons": "^0.0.11",
     "@element-plus/icons-vue": "^1.1.1",
     "element-plus": "^2.0.5",
     "vue": "^3.2.25",
-    "vue-router": "4"
+    "vue-router": "^4.0.13"
   },
   "devDependencies": {
     "@types/jest": "^27.0.3",

@@ -5,24 +5,16 @@
                 <h1>邦思教育订单管理</h1>
             </div>
             <div class="content-main">
-                <el-form :ref="loginFrom" :model="loginForm" :rules="rules" class="login-form">
+                <el-form :ref="formDom" :model="form" :rules="rules" class="login-form">
                     <el-form-item class="radio">
-                        <el-radio-group v-model="loginForm.radio">
-                            <el-radio label="管理员"></el-radio>
-                            <el-radio label="销售"></el-radio>
+                        <el-radio-group v-model="form.role">
+                            <el-radio label="admin">管理员</el-radio>
+                            <el-radio label="seller">销售</el-radio>
                         </el-radio-group>
                     </el-form-item>
 
                     <el-form-item class="phone" prop="phone">
-                        <el-input
-                            v-model="loginForm.phone"
-                            type="text"
-                            size="large"
-                            clearable
-                            autocomplete="off"
-                            placeholder="请输入手机号"
-                            class="login-input"
-                        >
+                        <el-input v-model="form.phone" type="text" size="large" clearable autocomplete="off" placeholder="请输入手机号" class="login-input">
                             <template #prepend>
                                 <el-icon :size="32">
                                     <phone />
@@ -31,42 +23,15 @@
                         </el-input>
                     </el-form-item>
 
-                    <el-form-item v-if="change == 0" class="pwd" prop="pwd">
-                        <el-input
-                            v-model="loginForm.pwd"
-                            type="password"
-                            size="large"
-                            placeholder="请输入密码"
-                            autocomplete="off"
-                        >
+                    <el-form-item class="pwd" prop="pwd">
+                        <el-input v-model="form.pwd" :type="isShowPassword ? 'text' : 'password'" size="large" placeholder="请输入密码" autocomplete="off">
                             <template #prepend>
                                 <el-icon :size="32">
                                     <lock />
                                 </el-icon>
                             </template>com
                             <template #append>
-                                <el-icon :size="32" @click="change = 1">
-                                    <turn-off />
-                                </el-icon>
-                            </template>
-                        </el-input>
-                    </el-form-item>
-
-                    <el-form-item v-else class="pwd" prop="pwd">
-                        <el-input
-                            v-model="loginForm.pwd"
-                            type="text"
-                            size="large"
-                            placeholder="请输入密码"
-                            autocomplete="off"
-                        >
-                            <template #prepend>
-                                <el-icon :size="32">
-                                    <lock />
-                                </el-icon>
-                            </template>com
-                            <template #append>
-                                <el-icon :size="32" @click="change = 0">
+                                <el-icon :size="32" @click="isShowPassword = !isShowPassword">
                                     <turn-off />
                                 </el-icon>
                             </template>
@@ -85,57 +50,17 @@
 <script lang="ts" setup>
 import { ref, reactive, } from "vue"
 import { useRouter } from "vue-router"
-import type { FormInstance } from "element-plus"
+import { rules, Form } from "@/views/login/model"
 
-const loginFrom = ref<FormInstance>()
-const change = ref(0)
-
-const loginForm = reactive({
-    phone: "",
-    pwd: "",
-    radio: "",
-})
-
-//验证手机号
-const phoneRules = (rule: any, value: any, callback: any) => {
-    if (value === "") {
-        callback(new Error("请输入手机号"))
-        console.log(rule)
-
-    } else {
-        if (loginForm.phone !== "") {
-
-            if (!loginFrom.value) return loginFrom.value.validateFiled("check", () => null)
-
-
-
-
-        }
-        callback()
-    }
-}
-
-//验证密码
-const pwdRules = (rule: any, value: any, callback: any) => {
-    if (value == "") {
-        callback(new Error("请输入密码"))
-        console.log(value)
-    }
-}
-
-
-const rules = reactive({
-    phone: [{ validator: phoneRules, trigger: "blur" }],
-    pwd: [{ validator: pwdRules, trigger: "blur" }]
-})
+const formDom = ref()
+const form = reactive(new Form())
+const isShowPassword = ref(false)
 
 const router = useRouter()
 //路由跳转
 function go() {
     router.replace("home")
 }
-
-
 </script>
 <style lang="scss" scoped>
 $width: 100%;
