@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-        <div class="left">
+<div class="left">
             <div class="item">
                 <Cell v-model="data.x" :readonly="false" :value="Number(data.x)" />
                 <Cell :readonly="true" :value="result.x" />
@@ -50,7 +50,6 @@ const result = computed(() => {
             height: 100px;
             justify-content: space-between;
             align-items: center;
-            
         }
     }
     .right {
