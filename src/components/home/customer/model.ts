@@ -144,4 +144,9 @@ const tableData = [
 
 ]
 
-export {tableData,}
+class Form {
+    phone: string | undefined
+    name: string | undefined
+}
+
+export {tableData,Form}

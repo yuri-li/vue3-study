@@ -128,11 +128,7 @@ $width: 100%;
                 }
                 .phone {
                     width: $width;
-                    .phone-icon {
-                        width: 70px;
-                        height: 32px;
-                        background-color: rgb(238, 213, 213);
-                    }
+                    
                 }
                 .pwd {
                     width: $width;
